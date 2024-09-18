@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "498647084131",
+    "project_id": "chatting-app-66aaa",
+    "storage_bucket": "chatting-app-66aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498647084131:android:1ad71f9540c79b8f981c56",
+        "android_client_info": {
+          "package_name": "co.id.kenarok"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5GPtpumpthWXFoDC8oymETkjFHgcw15g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498647084131:android:f87457f4f902ffe0981c56",
+        "android_client_info": {
+          "package_name": "co.id.kenarok.chatting.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5GPtpumpthWXFoDC8oymETkjFHgcw15g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
