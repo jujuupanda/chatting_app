@@ -1,7 +1,7 @@
 part of 'message_data_source.dart';
 
 class MessageRemoteDataSource extends MessageDataSource {
-  final _db = FirebaseFirestore.instance;
+  final firestoreDB = FirebaseService().firestoreDB;
 
   String _getChatRoomId(String senderId, String receiverId) {
     List<String> sortedId = [senderId, receiverId]..sort();
@@ -17,25 +17,51 @@ class MessageRemoteDataSource extends MessageDataSource {
   ) async {
     try {
       final chatRoomId = _getChatRoomId(message.senderId, message.receiverId);
-      await _db
-          .collection("chat")
-          .doc(chatRoomId)
-          .collection("messages")
-          .add(message.toJson())
-          .then(
+      await firestoreDB.collection("chat").doc(chatRoomId).set({
+        "lastMessage": message.content,
+        "timeStamp": message.timeStamp,
+      }).then(
         (value) {
-          _db
+          firestoreDB
               .collection("chat")
               .doc(chatRoomId)
               .collection("messages")
-              .doc(value.id)
-              .update(
-            {
-              "id": value.id,
+              .add(message.toJson())
+              .then(
+            (value) {
+              firestoreDB
+                  .collection("chat")
+                  .doc(chatRoomId)
+                  .collection("messages")
+                  .doc(value.id)
+                  .update(
+                {
+                  "id": value.id,
+                },
+              );
             },
           );
         },
       );
+      // await _db
+      //     .collection("chat")
+      //     .doc(chatRoomId)
+      //     .collection("messages")
+      //     .add(message.toJson())
+      //     .then(
+      //       (value) {
+      //     _db
+      //         .collection("chat")
+      //         .doc(chatRoomId)
+      //         .collection("messages")
+      //         .doc(value.id)
+      //         .update(
+      //       {
+      //         "id": value.id,
+      //       },
+      //     );
+      //   },
+      // );
       return Right(BlankModel());
     } catch (e) {
       return Left(ServerFailure("Terjadi kesalahan saat mengirim pesan"));
@@ -47,7 +73,7 @@ class MessageRemoteDataSource extends MessageDataSource {
     ReceiveMessageParams params,
   ) {
     final chatRoomId = _getChatRoomId(params.senderId, params.receiverId);
-    return _db
+    return firestoreDB
         .collection("chat")
         .doc(chatRoomId)
         .collection("messages")

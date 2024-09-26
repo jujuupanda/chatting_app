@@ -1,4 +1,4 @@
-import 'package:chatting_app/features/login/domain/entities/user_entity.dart';
+import 'package:chatting_app/core/shared/entity/user_entity.dart';
 import 'package:chatting_app/features/login/domain/repositories/auth_repository.dart';
 import 'package:chatting_app/features/login/domain/use_cases/login_use_case.dart';
 import 'package:dartz/dartz.dart';
@@ -12,7 +12,7 @@ void main() {
     id: "AmjWrJJOOW763JQVNqOD",
     email: "myemail@gmail.com",
     image: "myimage",
-    phone: "myphone",
+    phone: "myphone", firstName: '', middleName: '', lastName: '', information: '',
   );
   const tLogin = LoginParams(email: "myemail@gmail.com", password: "1234");
   late LoginUseCase useCase;

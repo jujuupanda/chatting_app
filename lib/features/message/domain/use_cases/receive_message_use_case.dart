@@ -4,6 +4,7 @@ import '../../../../core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/use_cases/use_case.dart';
+import '../entities/chat_entity.dart';
 import '../entities/message_entity.dart';
 import '../repositories/message_repository.dart';
 

@@ -1,12 +1,12 @@
 part of 'auth_data_source.dart';
 
 class AuthRemoteDataSource extends AuthDataSource {
-  final db = FirebaseFirestore.instance;
+  final firestoreDB = FirebaseService().firestoreDB;
 
   @override
   Future<Either<Failure, UserModel>>? login(LoginParams params) async {
     try {
-      final result = await db
+      final result = await firestoreDB
           .collection("logins")
           .where(
             "email",
@@ -17,7 +17,7 @@ class AuthRemoteDataSource extends AuthDataSource {
       if (result.docs.isNotEmpty) {
         final matchedUser = result.docs.first;
         if (matchedUser.data()["password"] == params.password) {
-          final getUser = await db
+          final getUser = await firestoreDB
               .collection("users")
               .where("email", isEqualTo: params.email)
               .get();

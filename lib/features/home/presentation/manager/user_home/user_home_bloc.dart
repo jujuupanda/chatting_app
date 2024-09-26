@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/use_cases/use_case.dart';
-import '../../../../login/domain/entities/user_entity.dart';
+import '../../../../../core/shared/entity/user_entity.dart';
 import '../../../domain/use_cases/get_all_user_except_logged_in_use_case.dart';
 
 part 'user_home_event.dart';

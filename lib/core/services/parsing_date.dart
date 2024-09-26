@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
-class ParsingDate {
-  String formatTime(String dateTime) {
+class ParsingString {
+  String formatTimeHHmm(String dateTime) {
     // Parsing string ke DateTime
     DateTime formatedDateTime = DateTime.parse(dateTime);
 
@@ -10,5 +10,10 @@ class ParsingDate {
 
     // Mengembalikan string yang diformat
     return formatter.format(formatedDateTime);
+  }
+
+  String formatFullName(String fullName) {
+    String result = fullName.replaceAll(RegExp(r'\s+'), ' ');
+    return result;
   }
 }

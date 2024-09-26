@@ -1,8 +1,9 @@
 import '../../../../core/entities/blank_entity.dart';
 import '../../../../core/error/failure.dart';
-import '../../domain/entities/message_entity.dart';
+import '../../domain/entities/chat_entity.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../domain/entities/message_entity.dart';
 import '../../domain/repositories/message_repository.dart';
 import '../../domain/use_cases/receive_message_use_case.dart';
 import '../data_sources/message_data_source.dart';

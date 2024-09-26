@@ -1,6 +1,6 @@
 import '../../../../core/entities/blank_entity.dart';
 import '../../../../core/error/failure.dart';
-import '../../domain/entities/user_entity.dart';
+import '../../../../core/shared/entity/user_entity.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../domain/repositories/auth_repository.dart';
