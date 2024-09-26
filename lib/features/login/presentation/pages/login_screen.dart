@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          context.pushNamed(RouteName().home);
+          context.goNamed(RouteName().home);
         }
       },
       child: Scaffold(

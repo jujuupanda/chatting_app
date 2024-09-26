@@ -20,17 +20,6 @@ class App extends StatelessWidget {
           bodyLarge: GoogleFonts.openSans(color: Colors.black),
         ),
       ),
-      darkTheme: ThemeData(
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blueGrey,
-        scaffoldBackgroundColor: Colors.black,
-        textTheme: TextTheme(
-          bodyLarge: GoogleFonts.openSans(color: Colors.white),
-        ),
-      ),
-      themeMode: ThemeMode.system,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/services/parsing_date.dart';
+import '../../domain/entities/chat_entity.dart';
 import '../../domain/entities/message_entity.dart';
 
 class MessagesCardView extends StatelessWidget {
@@ -62,7 +63,7 @@ class MessagesCardView extends StatelessWidget {
                       : MainAxisAlignment.start,
                   children: [
                     Text(
-                      ParsingDate().formatTime(messages.timeStamp),
+                      ParsingString().formatTimeHHmm(messages.timeStamp),
                       style: GoogleFonts.openSans(
                         fontSize: 12,
                         color: Colors.grey,

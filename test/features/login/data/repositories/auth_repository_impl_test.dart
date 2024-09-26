@@ -1,6 +1,6 @@
 import 'package:chatting_app/core/error/failure.dart';
 import 'package:chatting_app/features/login/data/data_sources/auth_data_source.dart';
-import 'package:chatting_app/features/login/data/models/user_model.dart';
+import 'package:chatting_app/core/shared/model/user_model.dart';
 import 'package:chatting_app/features/login/data/repositories/auth_repository_impl.dart';
 import 'package:chatting_app/features/login/domain/use_cases/login_use_case.dart';
 import 'package:dartz/dartz.dart';
@@ -18,7 +18,7 @@ void main() {
       id: "AmjWrJJOOW763JQVNqOD",
       email: "myemail@gmail.com",
       image: "myimage",
-      phone: "myphone");
+      phone: "myphone", firstName: '', middleName: '', lastName: '', information: '');
   setUp(() {
     mockAuthRemoteDataSourceImpl = MockAuthRemoteDataSourceImpl();
     repository = AuthRepositoryImpl( mockAuthRemoteDataSourceImpl);

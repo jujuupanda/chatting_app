@@ -4,7 +4,7 @@ import '../../../../core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/use_cases/use_case.dart';
-import '../entities/user_entity.dart';
+import '../../../../core/shared/entity/user_entity.dart';
 import '../repositories/auth_repository.dart';
 
 class LoginUseCase implements FutureUseCase<UserEntity, LoginParams> {

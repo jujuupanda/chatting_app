@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/models/message_model.dart';
+import '../../domain/entities/chat_entity.dart';
 import '../../domain/entities/message_entity.dart';
 import '../../domain/use_cases/receive_message_use_case.dart';
 import '../../domain/use_cases/send_message_use_case.dart';

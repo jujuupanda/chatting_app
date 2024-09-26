@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/routes/route_name.dart';
+import '../../../../core/services/parsing_date.dart';
 import '../manager/user_home/user_home_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -98,25 +99,30 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.zero,
                       itemCount: state.listUserExceptLoggedIn.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(width: 1),
-                          ),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: () {
-                                context.pushNamed(
-                                  RouteName().chat,
-                                  extra: state.listUserExceptLoggedIn[index],
-                                );
-                              },
-                              splashColor: Colors.blueAccent.withOpacity(0.2),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                    state.listUserExceptLoggedIn[index].email),
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(width: 1),
+                            ),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () {
+                                  context.pushNamed(
+                                    RouteName().chat,
+                                    extra: state.listUserExceptLoggedIn[index],
+                                  );
+                                },
+                                splashColor: Colors.blueAccent.withOpacity(0.2),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    ParsingString().formatFullName(
+                                        "${state.listUserExceptLoggedIn[index].firstName} ${state.listUserExceptLoggedIn[index].middleName} ${state.listUserExceptLoggedIn[index].lastName}"),
+                                  ),
+                                ),
                               ),
                             ),
                           ),

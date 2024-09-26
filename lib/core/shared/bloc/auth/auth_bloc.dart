@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/error/failure.dart';
 import '../../../../core/services/shared_prefs.dart';
-import '../../../../features/login/domain/entities/user_entity.dart';
+import '../../entity/user_entity.dart';
 import '../../../../features/login/domain/use_cases/login_use_case.dart';
 import '../../../../features/login/domain/use_cases/logout_use_case.dart';
 import '../../../use_cases/use_case.dart';

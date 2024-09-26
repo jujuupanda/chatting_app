@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/pages/home.dart';
-import '../../features/login/data/models/user_model.dart';
+import '../shared/model/user_model.dart';
 import '../../features/login/presentation/pages/login_screen.dart';
 import '../../features/message/presentation/pages/chat.dart';
 import '../../features/message/presentation/pages/message.dart';

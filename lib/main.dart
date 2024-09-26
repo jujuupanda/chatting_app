@@ -6,6 +6,7 @@ import 'app.dart';
 import 'core/shared/bloc/auth/auth_bloc.dart';
 import 'features/home/presentation/manager/user_home/user_home_bloc.dart';
 import 'features/message/presentation/manager/message_bloc.dart';
+import 'features/profile/presentation/manager/profile_bloc.dart';
 import 'firebase_options.dart';
 import 'service_locator.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<AuthBloc>()),
         BlocProvider(create: (context) => getIt<UserHomeBloc>()),
         BlocProvider(create: (context) => getIt<MessageBloc>()),
+        BlocProvider(create: (context) => getIt<ProfileBloc>()),
       ],
       child: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),

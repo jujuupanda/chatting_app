@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/services/parsing_date.dart';
 import '../../../../core/services/shared_prefs.dart';
-import '../../../login/data/models/user_model.dart';
+import '../../../../core/shared/model/user_model.dart';
+import '../../domain/entities/chat_entity.dart';
 import '../../domain/entities/message_entity.dart';
 import '../manager/message_bloc.dart';
 import '../widgets/messages_card_view.dart';
@@ -72,7 +74,9 @@ class _ChatScreenState extends State<ChatScreen> {
         appBar: PreferredSize(
           preferredSize: const Size(double.maxFinite, 56),
           child: AppBar(
-            title: Text(widget.userChatTo.email),
+            title: Text(ParsingString().formatFullName(
+                "${widget.userChatTo.firstName} ${widget.userChatTo.middleName} ${widget.userChatTo.lastName}"),
+            ),
             titleTextStyle: GoogleFonts.openSans(
               color: Colors.white,
               fontWeight: FontWeight.bold,
